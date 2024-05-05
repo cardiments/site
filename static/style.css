@@ -1,0 +1,82 @@
+/* Our default values set as CSS variables */
+:root {
+    --color-bg: #046838;
+    --color-text-main: #000000;
+    --color-primary: #FFFF00;
+    --color-red: #FF0000;
+    --color-green: #046838;
+    --wrapper-height: 87vh;
+    --image-max-width: 300px;
+    --image-margin: 3rem;
+    --font-optical-sizing: auto;
+}
+
+/* Basic page style resets */
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+.divider {
+    padding: 0 1rem;
+}
+
+body {
+    font-family: "Playfair Display";
+    background-color: var(--color-green);
+}
+
+/* Page structure */
+.wrapper {
+    min-height: var(--wrapper-height);
+    display: grid;
+    place-items: center;
+    margin: 0 1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg);
+    margin: 1rem 0;
+}
+.card {
+    max-width: 80vw;
+    max-height: calc(100vh - 2rem);
+    padding: 1.5em;
+    border-radius: 3em;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 2rem 1rem darkslategray;
+}
+.card img {
+    max-height: calc(100vh - 5rem);
+}
+.comingsoon {
+    max-width: 75vw;
+    max-height: 90vh;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+    padding: 1rem 0 0.75rem 0;
+    width: 100%;
+    flex-wrap: wrap;
+    border-top: 1px solid #fff;
+}
+
+.footer a:hover {
+    background: var(--color-primary);
+}
+
+.footer .links {
+    padding: 0.5rem 1rem 1.5rem;
+    white-space: nowrap;
+}
