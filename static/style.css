@@ -2,7 +2,7 @@
 :root {
     --color-bg: #046838;
     --color-text-main: #000000;
-    --color-primary: #FFFF00;
+    --color-primary: #ffffff;
     --color-red: #FF0000;
     --color-green: #046838;
     --wrapper-height: 87vh;
@@ -49,8 +49,8 @@ body {
 .card {
     max-width: 80vw;
     max-height: calc(100vh - 2rem);
-    padding: 1.5em;
-    border-radius: 3em;
+    padding: 1.5rem;
+    border-radius: 2.5rem;
     background-color: var(--color-primary);
     box-shadow: 0 0 2rem 1rem darkslategray;
 }
