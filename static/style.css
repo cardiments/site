@@ -54,12 +54,9 @@ body {
     background-color: var(--color-primary);
     box-shadow: 0 0 2rem 1rem darkslategray;
 }
-.card img {
-    max-height: calc(100vh - 5rem);
-}
 .comingsoon {
-    max-width: 75vw;
-    max-height: 90vh;
+    max-width: 100%;
+    max-height: calc(100vh - 5rem);
 }
 
 .footer {
