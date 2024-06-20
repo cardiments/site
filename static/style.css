@@ -58,6 +58,25 @@ body {
     max-width: 100%;
     max-height: calc(100vh - 5rem);
 }
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dipped { 
+  transform: rotate(-15deg);
+  animation: dipped 0.1s;
+}
+
+@keyframes dipped {
+  0% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
 
 .footer {
     display: flex;
