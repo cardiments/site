@@ -88,7 +88,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
                   <path id="curve" fill="transparent" d="m0,50c0,0,100,-40,235,0" transform="translate(40, 10)"/>
                   <text x="40%" y="50%" dominant-baseline="middle" text-anchor="middle">
                       <textPath xlink:href="#curve">
-                          <a href="#" class="title">Cardiments</a>
+                          <a href="/" class="title">Cardiments</a>
                       </textPath>
                   </text>
               </svg>
