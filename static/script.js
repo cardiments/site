@@ -60,7 +60,8 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
         }
         .title {
           fill: white;
-          font-family: "Playfair Display";
+          // font-family: "Copperplate";
+          font-family: "Playfair Display SC";
           font-style: normal;
           font-weight: bold;
           font-size: xxx-large;
@@ -84,10 +85,10 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
           </div>
           <div style="text-align:center; margin: 0 auto; height: 6rem">
               <svg>
-                  <path id="curve" fill="transparent" d="m0,50c0,0,100,-40,250,0" transform="translate(40, 10)"/>
+                  <path id="curve" fill="transparent" d="m0,50c0,0,100,-40,235,0" transform="translate(40, 10)"/>
                   <text x="40%" y="50%" dominant-baseline="middle" text-anchor="middle">
                       <textPath xlink:href="#curve">
-                          <a href="#" class="title">CARDIMENTS</a>
+                          <a href="#" class="title">Cardiments</a>
                       </textPath>
                   </text>
               </svg>
@@ -134,50 +135,57 @@ customElements.define('footer-component', class FooterComponent extends HTMLElem
 
     .footer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     margin: 1rem auto 0;
     padding: 1rem 0 0.75rem 0;
     width: 100%;
     flex-wrap: wrap;
     border-top: 1px solid #fff;
     visibility: ${visibility};
+    color: var(--color-primary);
     }
-
+    
+    .footer a {
+      color: var(--color-primary);
+    }
+    
     .footer a:hover {
-        background: var(--color-primary);
+      background: var(--color-primary);
+      color: var(--color-text-main)
     }
-
+      
     .footer .links {
+        color: var(--color-primary);
         padding: 0.5rem 1rem 1.5rem;
         white-space: nowrap;
     }
     </style>
 
     <footer class="footer">
+        <dl>
+        <dt><a href="/">home</a></dt>
+        </dl>
 
-      <dl>
-      <dt><a href="/">home</a></dt>
-      </dl>
+        <dl>
+        <dt>info</dt>
+        <dd><a href="/info/drum-map.html">drum map</a></dd>
+        <dd><a href="/info/links.html">links</a></dd>
+        <dd><a href="/info/nard.html">nard</a></dd>
+        <dd><a href="/info/notes.html">notes</a></dd>
+        </dl>
+        
+        <dl>
+        <dt>help</dt>
+        <dd><a href="/help/demo.html">demo</a></dd>
+        <dd><a href="/help/notation.html">notation</a></dd>
+        <dd><a href="/help/time-signatures.html">time-signatures</a></dd>
+        <dd><a href="/help/tips.html">tips</a></dd>
+        </dl>
 
-      <dl>
-      <dt>info</dt>
-      <dd><a href="/info/drum-map.html">drum map</a></dd>
-      <dd><a href="/info/links.html">links</a></dd>
-      <dd><a href="/info/nard.html">nard</a></dd>
-      <dd><a href="/info/notes.html">notes</a></dd>
-      </dl>
-      
-      <dl>
-      <dt>help</dt>
-      <dd><a href="/help/demo.html">demo</a></dd>
-      <dd><a href="/help/notation.html">notation</a></dd>
-      <dd><a href="/help/time-signatures.html">time-signatures</a></dd>
-      <dd><a href="/help/tips.html">tips</a></dd>
-      </dl>
-
-      <dl>
-      <dt>shop</dt>
-      </dl>
+        <dl>
+        <dt><a href="https://www.etsy.com/shop/cardiments">shop</a></dt>
+        </dl>
 
     </footer>
   `

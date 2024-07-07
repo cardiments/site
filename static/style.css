@@ -23,6 +23,11 @@
     src: url('fonts/montserrat-v25-latin-regular.woff2')  format('woff2'); 
 }
 
+@font-face { 
+    font-family: 'Copperplate'; 
+    src: url('fonts/CopperplateGothicStd-32BC.woff2')  format('woff2'); 
+}
+
 @font-face {
     font-family: "Playfair Display";
     src: url("fonts/PlayfairDisplay-Black.woff2") format('woff2');
@@ -48,8 +53,16 @@
     font-style: italic;
   }
   
+  @font-face {
+    font-family: "Playfair Display SC";
+    src: url("fonts/PlayfairDisplaySC-Black.woff2") format('woff2');
+    font-style: italic;
+  }
+  
 .divider {
     padding: 0 1rem;
+    text-align: center;
+    margin: auto 0;
 }
 
 body {
@@ -75,7 +88,6 @@ body {
 
 .card {
     max-width: 80vw;
-    max-height: calc(100vh - 2rem);
     padding: 1.5rem;
     border-radius: 2.5rem;
     background-color: whitesmoke;
