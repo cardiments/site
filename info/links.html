@@ -7,27 +7,40 @@
   <link rel="icon" href="/static/favicon.ico" />
   <title>Cardiments</title>
   <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://unpkg.com/htmx.org@2.0.0"
+    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
   <script src="/static/script.js" defer></script>
-
-
 </head>
 
 <body>
   <div class="wrapper">
     <div class="content" role="main">
+      <header-component></header-component>
       <div class="card">
-        <img 
-          src="/static/coming-soon.png" 
-          alt="cardiments - coming soon" 
-          class="comingsoon"
+        Please use the links below for further reading and support
+
+        www.drummerworld.com
+        Good general drummers resource page
+
+        www.pas.org
+        The Percussive Arts Society (PAS) is the world’s largest percussion organization
+
+        www.nard.us.com
+        National Assosiation of rudimental drummers
+
+        www.ninjadrumist.com
+        extensive library of rudiments
+
+        ae.vicfirth.com/education
+        Good eduction hublass="comingsoon"
         />
       </div>
     </div>
   </div>
 
-  <!-- <footer class="footer">
-    <div class="links"></div>
-  </footer> -->
+  <footer-component></footer-component>
 </body>
 
 </html>

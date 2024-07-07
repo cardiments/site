@@ -7,27 +7,32 @@
   <link rel="icon" href="/static/favicon.ico" />
   <title>Cardiments</title>
   <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://unpkg.com/htmx.org@2.0.0"
+    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
   <script src="/static/script.js" defer></script>
-
-
 </head>
 
 <body>
   <div class="wrapper">
     <div class="content" role="main">
+      <header-component></header-component>
       <div class="card">
-        <img 
-          src="/static/coming-soon.png" 
-          alt="cardiments - coming soon" 
-          class="comingsoon"
-        />
+        The National Association of Rudimental Drummers was set up in 1930s Chicago. They created the 13 essential
+        rudiments as an entrance exam into their club. The following year they releassed another 13 rudimments to
+        complete the 26 rudiments
+
+        *IMG N.A.R.D*
+
+        Front row, left to righ HARRY THOMPSON, GEO. A. ROBINSON, WM. FLOWERS, W. D. (BILL) KIEFFER, W. F. (BILL)
+        HAMMOND, JOE A. HATHAWAY, GEO. LAWRENCE STONE, ROY KNAPP Back row, left to right: WM. F. LUDWIG, M. M. (HEINE)
+        GERLACH, J. BURNS MOORE, WILLIAM C. MILLER, ED. B. STRAIGHT
       </div>
     </div>
   </div>
 
-  <!-- <footer class="footer">
-    <div class="links"></div>
-  </footer> -->
+  <footer-component></footer-component>
 </body>
 
 </html>
