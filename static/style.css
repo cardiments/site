@@ -59,12 +59,6 @@
     font-style: italic;
   }
   
-.divider {
-    padding: 0 1rem;
-    text-align: center;
-    margin: auto 0;
-}
-
 body {
     font-family: "Montserrat";
     background-color: var(--color-green);
@@ -91,9 +85,16 @@ body {
     padding: 1.5rem;
     border-radius: 2.5rem;
     background-color: whitesmoke;
-    box-shadow: 0 0 2rem 1rem darkslategray;
+    box-shadow: 0 0 2rem .1rem lightgoldenrodyellow;
 }
-
+.divider {
+    padding: 1rem;
+    text-align: center;
+    margin: auto 0;
+}
+.divider img {
+    max-width: 10rem
+}
 .comingsoon {
     max-width: 100%;
     max-height: calc(100vh - 5rem);
