@@ -67,29 +67,29 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
           margin: 0;
         }
       </style>
-      <header>
-          <div style="text-align: center; max-width:90vw">
+      <header style="text-align: center; max-width:90vw">
+          <div>
               <span>
-                  <img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="75px" src="/static/ButHo.png"/>
+                  <img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="20%" src="/static/ButHo.png"/>
               </span>
               <span>
-                  <img class="nav" style="transform: rotate(-5deg); margin: 0 0.1rem 1.5rem" width="75px" src="/static/ButIn.png"/>
+                  <img class="nav" style="transform: rotate(-5deg); margin: 0 0.1rem 1.5rem" width="20%" src="/static/ButIn.png"/>
               </span>
               <span>
-                  <img class="nav" style="transform: rotate(5deg); margin: 0 0.1rem 1.5rem" width="75px" src="/static/ButHe.png"/>
+                  <img class="nav" style="transform: rotate(5deg); margin: 0 0.1rem 1.5rem" width="20%" src="/static/ButHe.png"/>
               </span>
               <span>
-                  <img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="75px" src="/static/ButSh.png"/>
+                  <img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="20%" src="/static/ButSh.png"/>
               </span>
           </div>
-          <div style="text-align:center; margin: 0 auto; height: 6rem">
+          <div style="max-height:5rem;">
               <svg>
-                  <path id="curve" fill="transparent" d="m0,50c0,0,100,-40,235,0" transform="translate(40, 10)"/>
-                  <text x="40%" y="50%" dominant-baseline="middle" text-anchor="middle">
-                      <textPath xlink:href="#curve">
-                          <a href="/" class="title">Cardiments</a>
-                      </textPath>
-                  </text>
+                <path id="curve" fill="transparent" d="m8,35c0,0,125,-75,250,0" transform="translate(0, 30)" />
+                <text>
+                  <textPath xlink:href="#curve">
+                    <a href="/" class="title">Cardiments</a>
+                  </textPath>
+                </text>
               </svg>
           </div>
       </header>
