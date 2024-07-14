@@ -60,7 +60,6 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
         }
         .title {
           fill: white;
-          // font-family: "Copperplate";
           font-family: "Playfair Display SC";
           font-style: normal;
           font-weight: bold;
@@ -69,7 +68,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
         }
       </style>
       <header>
-          <div style="text-align: center;">
+          <div style="text-align: center; max-width:90vw">
               <span>
                   <img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="75px" src="/static/ButHo.png"/>
               </span>
@@ -100,21 +99,8 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
     if (suits) {
       // Detect clicks on the button
       [...suits].map(suit => {
-        // console.log(suit);
-        suit.onclick = function () {
-          // The 'dipped' class in style.css changes the appearance on click
-          suit.classList.toggle("dipped")
-        }
-        suit.onmouseover = function () {
-          // The 'dipped' class in style.css changes the appearance on click
-          suit.classList.toggle("dipped")
-        }
-        suit.onmouseout = function () {
-          // The 'dipped' class in style.css changes the appearance on click
-          suit.classList.toggle("dipped")
-        }
-      }
-      )
+        suit.onclick =  () => suit.classList.toggle("dipped")
+      })
     }
 
     // Tell HTMX about this component's shadow DOM
