@@ -35,7 +35,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
         }
       </style>
       <header>
-          <div>
+          <div style="text-align:center;">
               <span>
                   <img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="20%" src="/static/ButHo.png"/>
               </span>
