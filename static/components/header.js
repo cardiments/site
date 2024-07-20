@@ -28,14 +28,11 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
           margin: 0;
         }
         img.nav {
-          max-width: 6rem;
-        }
-        header svg {
-          width: 100%;
+          max-width: 4rem;
         }
       </style>
-      <header>
-          <div style="text-align:center;">
+      <header style="text-align:center;">
+          <div>
               <span>
                   <img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="20%" src="/static/ButHo.png"/>
               </span>
@@ -49,6 +46,8 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
                   <img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="20%" src="/static/ButSh.png"/>
               </span>
           </div>
+          <img class="svg" width="80%" src="/static/ArcWht.svg" alt="Cardiments" />
+          <!--
           <div style="max-height:5rem;">
               <svg>
                 <path id="curve" fill="transparent" d="m45,30c0,0,125,-75,250,0" transform="translate(0, 30)" />
@@ -59,6 +58,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
                 </text>
               </svg>
           </div>
+          -->
       </header>
     `
     const suits = root.querySelectorAll('img.nav')
