@@ -25,7 +25,7 @@
 
 @font-face { 
     font-family: 'Copperplate'; 
-    src: url('fonts/CopperplateGothicStd-32BC.woff2')  format('woff2'); 
+    src: url('fonts/CopperplateGothicStd-30BC.woff2')  format('woff2'); 
 }
 
 @font-face {
@@ -64,6 +64,11 @@ body {
     background-color: var(--color-green);
 }
 
+h1 {
+    font-family: "Copperplate";
+    text-align: center;
+}
+
 .wrapper {
     min-height: var(--wrapper-height);
     display: grid;
@@ -86,9 +91,10 @@ body {
     background-color: whitesmoke;
     box-shadow: 0 0 2rem .1rem lightgoldenrodyellow;
     font-size: large;
+    text-align: justify;
 }
 .divider {
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
     margin: auto 0;
 }
