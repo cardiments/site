@@ -88,7 +88,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
                   <img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="20%" src="/static/ButSh.png"/>
               </span>
           </div>
-          <img class="svg" width="80%" src="/static/ArcWht.svg" alt="Cardiments" />
+          <img width="80%" style="max-width:20rem;" src="/static/ArcWht.svg" alt="Cardiments" />
           <div class="sc-bdfBwQ sc-gsTCUz cUWRuD bhdLno">
             <div class="flex">
               <a target="_blank" rel="noopener" title="Etsy" data-testid="SocialIcon" href="https://cardiments.etsy.com" aria-label="Cardiments" class="sc-eCssSg lbrsth sc-hBEYos dWjUC">
