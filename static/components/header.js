@@ -47,18 +47,6 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
               </span>
           </div>
           <img class="svg" width="80%" src="/static/ArcWht.svg" alt="Cardiments" />
-          <!--
-          <div style="max-height:5rem;">
-              <svg>
-                <path id="curve" fill="transparent" d="m45,30c0,0,125,-75,250,0" transform="translate(0, 30)" />
-                <text>
-                  <textPath xlink:href="#curve">
-                    <a href="/" class="title">Cardiments</a>
-                  </textPath>
-                </text>
-              </svg>
-          </div>
-          -->
       </header>
     `
     const suits = root.querySelectorAll('img.nav')
