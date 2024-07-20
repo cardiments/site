@@ -81,8 +81,8 @@ body {
 
 .card {
     max-width: 90vw;
-    padding: 1.5rem 2.5rem;
-    border-radius: 2.5rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem;
     background-color: whitesmoke;
     box-shadow: 0 0 2rem .1rem lightgoldenrodyellow;
     font-size: large;
@@ -104,5 +104,3 @@ body {
     margin: 0 auto;
     text-align: center;
 }
-
-
