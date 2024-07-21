@@ -49,6 +49,9 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
             transition: transform 0s cubic-bezier(0.23, 1, 0.32, 1) 0s;
             z-index: 0;
         }
+        .dWjUC:hover {
+            transform: scale(1.075);
+        }
         .fwXqBO {
             margin-top: 8px;
             fill: rgb(255, 255, 255);
