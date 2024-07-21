@@ -49,7 +49,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
             transition: transform 0s cubic-bezier(0.23, 1, 0.32, 1) 0s;
             z-index: 0;
         }
-        .dWjUC:hover {
+        .dWjUC:hover, .title:hover {
             transform: scale(1.075);
         }
         .fwXqBO {
@@ -91,7 +91,7 @@ customElements.define('header-component', class HeaderComponent extends HTMLElem
                   <img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="20%" src="/static/ButSh.png"/>
               </span>
           </div>
-          <img width="80%" style="max-width:20rem;" src="/static/ArcWht.svg" alt="Cardiments" />
+          <a href="/"><img width="80%" class="title" style="max-width:20rem;" src="/static/ArcWht.svg" alt="Cardiments" /></a>
           <div class="sc-bdfBwQ sc-gsTCUz cUWRuD bhdLno">
             <div class="flex">
               <a target="_blank" rel="noopener" title="Etsy" data-testid="SocialIcon" href="https://cardiments.etsy.com" aria-label="Cardiments" class="sc-eCssSg lbrsth sc-hBEYos dWjUC">
