@@ -1,52 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/static/favicon.ico" />
+    <title>Cardiments</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.0"
+      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
+    <script src="/static/script.js" defer></script>
+    <script src="/static/components/header.js" defer></script>
+    <script src="/static/components/footer.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/static/favicon.ico" />
-  <title>Cardiments</title>
-  <link rel="stylesheet" href="/static/style.css" />
-  <script src="https://unpkg.com/htmx.org@2.0.0"
-    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
-  <script src="/static/script.js" defer></script>
-  <script src="/static/components/header.js" defer></script>  <script src="/static/components/footer.js" defer></script>
-</head>
+  <body>
+    <div class="wrapper">
+      <header-component></header-component>
+      <div class="content" role="main">
+        <div class="card">
+          <p>
+            Practice these rudiments at varying tempos and note subdivision
+            values. Slow, controlled practice will lead to better practice and
+            faster tempos over time
+          </p>
 
-<body>
-  <div class="wrapper">
-  <header-component></header-component>
-    <div class="content" role="main">
-      <div class="card">
-        <p>
-          Practice these rudiments at varying tempos and note subdivision values. Slow, controlled practice will lead to
-          better practice and faster tempos over time
-        </p>
+          <!-- * IMG Strongman -->
 
-        <!-- * IMG Strongman -->
+          <p>
+            Practice rudiments leading with both hands. Some rudiments naturally
+            “flip” leading hands in their pattern. Rudiments where the leading
+            hand “sticks” should be practiced with the alternative sticking too.
+          </p>
 
-        <p>
-          Practice rudiments leading with both hands. Some rudiments naturally “flip” leading hands in their pattern.
-          Rudiments where the leading hand “sticks” should be practiced with the alternative sticking too.
-        </p>
+          <!-- * IMG Hands -->
 
-        <!-- * IMG Hands -->
+          <p>
+            Cardiments can be used alongside other learning methods. Taking
+            lessons from a good drum teacher is invaluable to the development of
+            your own style and sound.
+          </p>
 
-        <p>
-          Cardiments can be used alongside other learning methods. Taking lessons from a good drum teacher is invaluable
-          to the development of your own style and sound.
-        </p>
-          
-        <ps>
-          This page is a supplement of the Cardiments deck. Select the card below to see a demonstration video
-        </p>
+          <p>
+            This page is a supplement of the Cardiments deck. Select the card
+            below to see a demonstration video
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 
-  <footer-component></footer-component>
-</body>
-
+    <footer-component></footer-component>
+  </body>
 </html>

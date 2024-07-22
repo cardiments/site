@@ -1,52 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/static/favicon.ico" />
+    <title>Cardiments</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.0"
+      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
+    <script src="/static/script.js" defer></script>
+    <script src="/static/components/header.js" defer></script>
+    <script src="/static/components/footer.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/static/favicon.ico" />
-  <title>Cardiments</title>
-  <link rel="stylesheet" href="/static/style.css" />
-  <script src="https://unpkg.com/htmx.org@2.0.0"
-    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
-  <script src="/static/script.js" defer></script>
-  <script src="/static/components/header.js" defer></script>  <script src="/static/components/footer.js" defer></script>
-</head>
+  <body>
+    <div class="wrapper">
+      <header-component></header-component>
+      <div class="content" role="main">
+        <div class="card">
+          <p>
+            The National Association of Rudimental Drummers was set up in 1930s
+            Chicago. They created the 13 essential rudiments as an entrance exam
+            into their club. The following year they releassed another 13
+            rudimments to complete the 26 rudiments
+          </p>
 
-<body>
-  <div class="wrapper">
-  <header-component></header-component>
-    <div class="content" role="main">
-      <div class="card">
-        <p>
-          The National Association of Rudimental Drummers was set up in 1930s Chicago. They created the 13 essential
-          rudiments as an entrance exam into their club. The following year they releassed another 13 rudimments to
-          complete the 26 rudiments
-        </p>
+          <div style="text-align: center">
+            <img
+              src="/static/NARD.png"
+              width="80%"
+              style="box-shadow: 0.1rem 0.1rem 1rem 0.1rem"
+            />
+          </div>
 
-        <div style="text-align: center;">
-          <img src="/static/NARD.png" width="80%" style="box-shadow: .1rem .1rem 1rem .1rem;" />
+          <p>
+            Front row, left to right
+            <span style="font-family: Playfair Display SC">
+              Harry Thompson, Geo. A. Robinson, W. M. Flowers, W. D. (Bill)
+              Kieffer, W. F. (Bill) Hammond, Joe A. Hathaway, Geo. Lawrence
+              Stone, Roy Knapp
+            </span>
+          </p>
+          <p>
+            Back row, left to right:
+            <span style="font-family: Playfair Display SC">
+              W. M. F. Ludwig, M. M. (Heine) Gerlach, J. Burns Moore, William C.
+              Miller, Ed. B. Straight
+            </span>
+          </p>
         </div>
-
-        <p>
-          Front row, left to right <span style="font-family: Playfair Display SC;">
-            Harry Thompson, Geo. A. Robinson, W. M. Flowers, W. D. (Bill) Kieffer, W. F. (Bill)
-            Hammond, Joe A. Hathaway, Geo. Lawrence Stone, Roy Knapp 
-          </span>
-        </p>
-        <p>
-          Back row, left to right: <span style="font-family: Playfair Display SC;">
-            W. M. F. Ludwig, M. M. (Heine)
-            Gerlach, J. Burns Moore, William C. Miller, Ed. B. Straight
-          </span>
-        </p>
       </div>
     </div>
-  </div>
 
-  <footer-component></footer-component>
-</body>
-
+    <footer-component></footer-component>
+  </body>
 </html>

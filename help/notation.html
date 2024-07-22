@@ -1,63 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/static/favicon.ico" />
+    <title>Cardiments</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <script
+      src="https://unpkg.com/htmx.org@2.0.0"
+      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
+    <script src="/static/script.js" defer></script>
+    <script src="/static/components/header.js" defer></script>
+    <script src="/static/components/footer.js" defer></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="/static/favicon.ico" />
-  <title>Cardiments</title>
-  <link rel="stylesheet" href="/static/style.css" />
-  <script src="https://unpkg.com/htmx.org@2.0.0"
-    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
-    crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
-  <script src="/static/script.js" defer></script>
-  <script src="/static/components/header.js" defer></script>  <script src="/static/components/footer.js" defer></script>
-</head>
-
-<body>
-  <div class="wrapper">
-  <header-component></header-component>
-    <div class="content" role="main">
-      <div class="card">
-        Roll over the cards for a description
-
-        *IMG card Notation with rollovers*
-
-        Fig.1
-        Quarter Note (crotchet) is a whole beat long.
-
-        Eighth Note (quaver) is 1/2 a beat long. One on its own has a little flick at
-        the top.
-
-        Eighth Note Triplet three make a whole beat.
-
-        Sixteenth Note (semi quaver) is 1/4 of a beat long.
-        F
-        Fig.2
-        Quarter Note Rest (crotchet rest) is a whole beat long
-
-
-        Eight Note Rest (quaver rest) is half a beat long
-
-        Fig.3
-        The little dot increases the note length by 1/2 of its value.
-
-        The Dotted Quarter Note (shown above) is 1 & half beats long ie. 3 eighth notes duration.
-
-        The Dotted Eighth Note is 3/4 of a beat long i.e 3 sixteenth notes duration.
-
-        Fig.4
-        An arrow above a note is an Accent. A lound note played with a wider stroke or an rim-shot.
-
-        The tiny single 18th note with a line through it show a Fam adournment.
-
-        2 tiny 16th notes shows a Ruff or Drag adournment.
+  <body>
+    <div class="wrapper">
+      <header-component></header-component>
+      <div class="content" role="main">
+        <div class="card">
+          Roll over the cards for a description *IMG card Notation with
+          rollovers* Fig.1 Quarter Note (crotchet) is a whole beat long. Eighth
+          Note (quaver) is 1/2 a beat long. One on its own has a little flick at
+          the top. Eighth Note Triplet three make a whole beat. Sixteenth Note
+          (semi quaver) is 1/4 of a beat long. F Fig.2 Quarter Note Rest
+          (crotchet rest) is a whole beat long Eight Note Rest (quaver rest) is
+          half a beat long Fig.3 The little dot increases the note length by 1/2
+          of its value. The Dotted Quarter Note (shown above) is 1 & half beats
+          long ie. 3 eighth notes duration. The Dotted Eighth Note is 3/4 of a
+          beat long i.e 3 sixteenth notes duration. Fig.4 An arrow above a note
+          is an Accent. A lound note played with a wider stroke or an rim-shot.
+          The tiny single 18th note with a line through it show a Fam
+          adournment. 2 tiny 16th notes shows a Ruff or Drag adournment.
+        </div>
       </div>
     </div>
-  </div>
 
-  <footer-component></footer-component>
-</body>
-
+    <footer-component></footer-component>
+  </body>
 </html>

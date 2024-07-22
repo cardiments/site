@@ -1,6 +1,17 @@
 {
   "devDependencies": {
     "@prettier/plugin-xml": "^3.4.1",
+    "pre-commit": "^1.2.2",
     "prettier": "^3.3.3"
-  }
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true
+  },
+  "scripts": {
+    "prettier": "prettier . --write"
+  },
+  "precommit": "prettier"
 }

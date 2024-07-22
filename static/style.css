@@ -1,112 +1,112 @@
 :root {
-    --color-bg: #046838;
-    --color-text-main: #000000;
-    --color-primary: #ffffff;
-    --color-red: #FF0000;
-    --color-green: #046838;
-    --wrapper-height: 87vh;
-    --image-max-width: 300px;
-    --image-margin: 3rem;
-    --font-optical-sizing: auto;
+  --color-bg: #046838;
+  --color-text-main: #000000;
+  --color-primary: #ffffff;
+  --color-red: #ff0000;
+  --color-green: #046838;
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+  --font-optical-sizing: auto;
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 [hidden] {
-    display: none !important;
-}
-
-@font-face { 
-    font-family: 'Montserrat'; 
-    src: url('fonts/montserrat-v25-latin-regular.woff2')  format('woff2'); 
-}
-
-@font-face { 
-    font-family: 'Copperplate'; 
-    src: url('fonts/CopperplateGothicStd-32AB.woff2')  format('woff2'); 
+  display: none !important;
 }
 
 @font-face {
-    font-family: "Playfair Display";
-    src: url("fonts/PlayfairDisplay-Black.woff2") format('woff2');
-    /* src: url("fonts/PlayfairDisplay-Regular.woff2") format('woff2'); */
-  }
-  
-  @font-face {
-    font-family: "Playfair Display";
-    src: url("fonts/PlayfairDisplay-Bold.woff2") format('woff2');
-    font-weight: bold;
-  }
-  
-  @font-face {
-    font-family: "Playfair Display";
-    src: url("fonts/PlayfairDisplay-BoldItalic.woff2") format('woff2');
-    font-weight: bold;
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: "Playfair Display";
-    src: url("fonts/PlayfairDisplay-Italic.woff2") format('woff2');
-    font-style: italic;
-  }
-  
-  @font-face {
-    font-family: "Playfair Display SC";
-    src: url("fonts/PlayfairDisplaySC-Black.woff2") format('woff2');
-    font-style: italic;
-  }
-  
+  font-family: 'Montserrat';
+  src: url('fonts/montserrat-v25-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Copperplate';
+  src: url('fonts/CopperplateGothicStd-32AB.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/PlayfairDisplay-Black.woff2') format('woff2');
+  /* src: url("fonts/PlayfairDisplay-Regular.woff2") format('woff2'); */
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/PlayfairDisplay-BoldItalic.woff2') format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('fonts/PlayfairDisplay-Italic.woff2') format('woff2');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Playfair Display SC';
+  src: url('fonts/PlayfairDisplaySC-Black.woff2') format('woff2');
+  font-style: italic;
+}
+
 body {
-    font-family: "Montserrat";
-    background-color: var(--color-green);
+  font-family: 'Montserrat';
+  background-color: var(--color-green);
 }
 
 h1 {
-    font-family: "Copperplate";
-    text-align: center;
+  font-family: 'Copperplate';
+  text-align: center;
 }
 
 .wrapper {
-    min-height: var(--wrapper-height);
-    display: grid;
-    place-items: center;
-    margin: 0 1rem;
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
 }
 
 .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
 }
 
 .card {
-    max-width: 90vw;
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    background-color: whitesmoke;
-    box-shadow: 0 0 2rem .1rem lightgoldenrodyellow;
-    font-size: large;
-    text-align: justify;
+  max-width: 90vw;
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background-color: whitesmoke;
+  box-shadow: 0 0 2rem 0.1rem lightgoldenrodyellow;
+  font-size: large;
+  text-align: justify;
 }
 .divider {
-    padding: 2rem;
-    text-align: center;
-    margin: auto 0;
+  padding: 2rem;
+  text-align: center;
+  margin: auto 0;
 }
 .divider img {
-    max-width: 10rem
+  max-width: 10rem;
 }
 .comingsoon {
-    max-width: 100%;
-    max-height: calc(100vh - 5rem);
+  max-width: 100%;
+  max-height: calc(100vh - 5rem);
 }
 
 .centered {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
