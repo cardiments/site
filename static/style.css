@@ -75,7 +75,6 @@ h1, h2 {
   min-height: var(--wrapper-height);
   display: grid;
   place-items: center;
-  margin: 0 1rem;
 }
 
 .content {
