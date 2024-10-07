@@ -18,7 +18,6 @@ customElements.define(
   width: 100%;
   flex-wrap: wrap;
   border-top: 1px solid #fff;
-  visibility: ${visibility};
   color: var(--color-primary);
 }
 
@@ -36,35 +35,50 @@ customElements.define(
     padding: 0.5rem 1rem 1.5rem;
     white-space: nowrap;
 }
+
+footer dt {
+  font-weight: bold;
+  margin: 0 0 .5rem;
+}
+
+footer dd {
+  margin-inline-start: 0;
+}
+
+.dev {
+  visibility: ${visibility};
+  display: ${display}
+}
+
 </style>
 
 <footer class="footer">
     <dl>
       <dt><a href="/">home</a></dt>
     </dl>
-
+    
     <dl>
-      <dt>info</dt>
+    <dt><a href="/info/">info</a></dt>
       <dd><a href="/info/drum-map.html">drum map</a></dd>
       <dd><a href="/info/links.html">links</a></dd>
       <dd><a href="/info/nard.html">nard</a></dd>
       <dd><a href="/info/notes.html">notes</a></dd>
-    </dl>
-    
-    <dl>
-      <dt>help</dt>
+      </dl>
+      
+      <dl>
+      <dt><a href="/help/">help</dt>
       <dd><a href="/help/demo.html">demo</a></dd>
-      <dd><a href="/help/notation.html">notation</a></dd>
-      <dd><a href="/help/time-signatures.html">time-signatures</a></dd>
+      <dd class="dev"><a href="/help/notation.html">notation</a></dd>
+      <dd class="dev"><a href="/help/time-signatures.html">time-signatures</a></dd>
       <dd><a href="/help/tips.html">tips</a></dd>
-    </dl>
+      </dl>
+      
+      <dl>
+        <dt><a href="https://www.etsy.com/shop/cardiments">shop</a></dt>
+      </dl>
 
-    <dl>
-      <dt><a href="https://www.etsy.com/shop/cardiments">shop</a></dt>
-    </dl>
-
-</footer>
-  `
+      </footer>
+      `
       // Tell HTMX about this component's shadow DOM
       htmx.process(root)
     }

@@ -1,57 +1,58 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/static/favicon.ico" />
-    <title>Cardiments</title>
-    <link rel="stylesheet" href="/static/style.css" />
-    <script
-      src="https://unpkg.com/htmx.org@2.0.0"
-      integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
-    <script src="/static/script.js" defer></script>
-    <script src="/static/components/header.js" defer></script>
-    <script src="/static/components/footer.js" defer></script>
-  </head>
 
-  <body>
-    <div class="wrapper">
-      <header-component></header-component>
-      <div class="content" role="main">
-        <div class="card">
-          <dl>
-            <dt>Notation</dt>
-            <dd>
-              The rudiments in this deck have been notated in a simple easy way
-              to read. There are other notations for other purposes
-            </dd>
-            <div class="divider">
-              <img src="/static/PcSt.png" />
-            </div>
-            <dt>Variations</dt>
-            <dd>
-              There are endless ways to play and combine these rudiments. How
-              they are phrased and combined define a drummers sound
-            </dd>
-            <div class="divider">
-              <img src="/static/PcSt.png" />
-            </div>
-            <dt>Sticking</dt>
-            <dd>
-              The notation shows R Dominant L Non-dominant hands. Southpaws can
-              switch these stickings. All rudiments should be played and
-              practiced both ways round
-            </dd>
-          </dl>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/static/favicon.ico" />
+  <title>Cardiments</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://unpkg.com/htmx.org@2.0.0"
+    integrity="sha384-wS5l5IKJBvK6sPTKa2WZ1js3d947pvWXbPJ1OmWfEuxLgeHcEbjUUA5i9V5ZkpCw"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/htmx.org@1.9.12/dist/ext/client-side-templates.js"></script>
+  <script src="/static/script.js" defer></script>
+  <script src="/static/components/header.js" defer></script>
+  <script src="/static/components/footer.js" defer></script>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header-component></header-component>
+    <div class="content" role="main">
+      <div class="card">
+        <h2>notes</h2>
+        <dl>
+          <dt>Notation</dt>
+          <dd>
+            The rudiments in this deck have been notated in a simple easy way
+            to read. There are other notations for other purposes
+          </dd>
           <div class="divider">
             <img src="/static/PcSt.png" />
           </div>
+          <dt>Variations</dt>
+          <dd>
+            There are endless ways to play and combine these rudiments. How
+            they are phrased and combined define a drummers sound
+          </dd>
+          <div class="divider">
+            <img src="/static/PcSt.png" />
+          </div>
+          <dt>Sticking</dt>
+          <dd>
+            The notation shows R Dominant L Non-dominant hands. Southpaws can
+            switch these stickings. All rudiments should be played and
+            practiced both ways round
+          </dd>
+        </dl>
+        <div class="divider">
+          <img src="/static/PcSt.png" />
         </div>
       </div>
-      <footer-component></footer-component>
     </div>
-  </body>
+  </div>
+  <footer-component></footer-component>
+</body>
+
 </html>

@@ -4,6 +4,7 @@ const urlParams = new URLSearchParams(queryString)
 
 // search for param: v (visibility)
 let visibility = urlParams.get('v')
+let display = 'none'
 
 // function to store persistent data
 function setCookie(name, value, days) {
@@ -35,4 +36,13 @@ function getCookie(name) {
 let visibilityCookie = getCookie('visibility')
 if (visibilityCookie) {
   visibility = visibilityCookie
-} else [(visibility = 'hidden')]
+} else[(visibility = 'hidden')]
+
+if (visibility && visibility == 'visible') {
+  visibility = urlParams.get('v')
+  display = 'block'
+}
+else {
+  visibility = 'visible'
+  display = 'none'
+}

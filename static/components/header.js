@@ -16,7 +16,6 @@ customElements.define(
             0% {
                 transform: rotate(15deg);
             }
-
             100% {
                 transform: rotate(-15deg);
             }
@@ -81,16 +80,16 @@ customElements.define(
       <header style="text-align:center;">
         <div>
               <span>
-                  <img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="20%" src="/static/ButHo.png"/>
+                  <a href="/"><img class="nav" style="transform: rotate(-15deg); margin: 0 0.1rem 0.5rem 0" width="20%" src="/static/ButHo.png" /></a>
               </span>
               <span>
-                  <img class="nav" style="transform: rotate(-5deg); margin: 0 0.1rem 1.5rem" width="20%" src="/static/ButIn.png"/>
+                  <a href="/info/"><img class="nav" style="transform: rotate(-5deg); margin: 0 0.1rem 1.5rem" width="20%" src="/static/ButIn.png"/></a>
               </span>
               <span>
-                  <img class="nav" style="transform: rotate(5deg); margin: 0 0.1rem 1.5rem" width="20%" src="/static/ButHe.png"/>
+                  <a href="/help/"><img class="nav" style="transform: rotate(5deg); margin: 0 0.1rem 1.5rem" width="20%" src="/static/ButHe.png"/></a>
               </span>
               <span>
-                  <img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="20%" src="/static/ButSh.png"/>
+                  <a href="https://cardiments.etsy.com"><img class="nav" style="transform: rotate(15deg); margin: 0 0.1rem 0.5rem" width="20%" src="/static/ButSh.png"/>
               </span>
           </div>
           <a href="/"><img width="80%" class="title" style="max-width:20rem;" src="/static/ArcWht.svg" alt="Cardiments" /></a>
