@@ -59,13 +59,13 @@ footer dd {
     
     <dl>
     <dt><a href="/info/">info</a></dt>
-      <dd><a href="/info/drum-map.html">drum map</a></dd>
-      <dd><a href="/info/links.html">links</a></dd>
-      <dd><a href="/info/nard.html">nard</a></dd>
-      <dd><a href="/info/notes.html">notes</a></dd>
+      <dd><a href="/info/#info-notes">notes</a></dd>
+      <dd><a href="/info/#info-nard">nard</a></dd>
+      <dd><a href="/info/#info-links">links</a></dd>
+      <dd><a href="/info/#info-drum-shops">drum map</a></dd>
       </dl>
       
-      <dl>
+    <dl>
       <dt><a href="/help/">help</dt>
       <dd><a href="/help/demo.html">demo</a></dd>
       <dd class="dev"><a href="/help/notation.html">notation</a></dd>
