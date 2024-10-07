@@ -12,7 +12,7 @@ customElements.define(
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 1rem auto 0;
   padding: 1rem 0 0.75rem 0;
   width: 100%;
