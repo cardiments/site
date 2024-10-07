@@ -58,7 +58,7 @@ footer dd {
     </dl>
     
     <dl>
-    <dt><a href="/info/">info</a></dt>
+    <dt><a href="/info/#info">info</a></dt>
       <dd><a href="/info/#info-notes">notes</a></dd>
       <dd><a href="/info/#info-nard">nard</a></dd>
       <dd><a href="/info/#info-links">links</a></dd>
@@ -66,11 +66,11 @@ footer dd {
       </dl>
       
     <dl>
-      <dt><a href="/help/">help</dt>
-      <dd><a href="/help/demo.html">demo</a></dd>
+      <dt><a href="/help/#help">help</dt>
+      <dd><a href="/help/#help-demo">demo</a></dd>
+      <dd><a href="/help/#help-tips">tips</a></dd>
       <dd class="dev"><a href="/help/notation.html">notation</a></dd>
       <dd class="dev"><a href="/help/time-signatures.html">time-signatures</a></dd>
-      <dd><a href="/help/tips.html">tips</a></dd>
       </dl>
       
       <dl>
