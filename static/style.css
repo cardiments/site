@@ -19,49 +19,38 @@
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url('fonts/montserrat-v25-latin-regular.woff2') format('woff2');
-}
-
-@font-face {
   font-family: 'Copperplate';
   src: url('fonts/CopperplateGothicStd-32AB.woff2') format('woff2');
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('fonts/PlayfairDisplay-Black.woff2') format('woff2');
-  /* src: url("fonts/PlayfairDisplay-Regular.woff2") format('woff2'); */
+  font-family: "AtkinsonHyperlegible";
+  src: url("fonts/Atkinson-Hyperlegible-Regular-102.woff") format('woff');
 }
-
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('fonts/PlayfairDisplay-Bold.woff2') format('woff2');
+  font-family: "AtkinsonHyperlegible";
+  src: url("fonts/Atkinson-Hyperlegible-Bold-102.woff") format('woff');
   font-weight: bold;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('fonts/PlayfairDisplay-BoldItalic.woff2') format('woff2');
+  font-family: "AtkinsonHyperlegible";
+  src: url("fonts/Atkinson-Hyperlegible-BoldItalic-102.woff") format('woff');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Playfair Display';
-  src: url('fonts/PlayfairDisplay-Italic.woff2') format('woff2');
+  font-family: "AtkinsonHyperlegible";
+  src: url("fonts/Atkinson-Hyperlegible-Italic-102.woff") format('woff');
   font-style: italic;
 }
 
-@font-face {
-  font-family: 'Playfair Display SC';
-  src: url('fonts/PlayfairDisplaySC-Black.woff2') format('woff2');
-  font-style: italic;
-}
 
 body {
-  font-family: 'Montserrat';
+  font-family: 'Atkinson Hyperlegible';
   background-color: var(--color-green);
+  text-align: justify;
 }
 
 h1,
@@ -69,6 +58,17 @@ h2,
 h3 {
   font-family: 'Copperplate';
   text-align: center;
+}
+
+dt::before {
+  content: '♠️';
+  font-size: larger;
+}
+dt {
+  font-size: larger;
+}
+dd {
+  margin: 1rem;
 }
 
 .wrapper {
@@ -114,3 +114,4 @@ h3 {
   margin: 0 auto;
   text-align: center;
 }
+
