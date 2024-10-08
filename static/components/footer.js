@@ -4,7 +4,7 @@ customElements.define(
     // This method runs when your custom element is added to the page
     connectedCallback() {
       const root = this.attachShadow({
-        mode: 'closed',
+        mode: 'open',
       })
       root.innerHTML = `
 <style>
@@ -19,10 +19,12 @@ customElements.define(
   flex-wrap: wrap;
   border-top: 1px solid #fff;
   color: var(--color-primary);
+  font-family: 'Copperplate';
 }
-
+  
 .footer a {
   color: var(--color-primary);
+  text-decoration: none;
 }
 
 .footer a:hover {
@@ -38,11 +40,13 @@ customElements.define(
 
 footer dt {
   font-weight: bold;
+  font-size: large;
   margin: 0 0 .5rem;
 }
 
 footer dd {
   margin-inline-start: 0;
+  margin: .3rem 0 0
 }
 
 .dev {
@@ -84,3 +88,19 @@ footer dd {
     }
   }
 )
+
+// scroll to anchor
+// document.querySelector("footer-component").shadowRoot.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelector("footer-component").shadowRoot.querySelectorAll('a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      try {
+        document.querySelector(this.getAttribute('href').replace(/\/.+\//,'')).scrollIntoView({
+            behavior: 'smooth'
+        });
+      } catch (error) {
+        window.location.replace(e.target);
+      }
+  });
+});
+
