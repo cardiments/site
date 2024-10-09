@@ -142,7 +142,7 @@ customElements.define(
             animation-duration: 4000ms;
             animation-iteration-count: infinite;
             animation-timing-function: linear;" 
-            src="static/ButMailTo.png" 
+            src="/static/ButMailTo.png" 
             width="20%" 
           />
         </div>
