@@ -91,7 +91,7 @@ dd {
   padding: 1.2rem;
   border-radius: 1.5rem;
   background-color: whitesmoke;
-  box-shadow: 0 0 2rem 0.01rem lightgoldenrodyellow;
+  box-shadow: 1rem 1rem 2rem -1rem;
   font-size: large;
 }
 
