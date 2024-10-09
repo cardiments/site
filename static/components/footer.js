@@ -100,8 +100,8 @@ customElements.define(
           <dd><a href="/info/#info-notes">notes</a></dd>
           <dd><a href="/info/#info-nard">nard</a></dd>
           <dd><a href="/info/#info-links">links</a></dd>
-          <dd><a href="/info/#info-drum-shops">drum map</a></dd>
-          </dl>
+          <dd><a href="/info/#info-drum-shops">shops</a></dd>
+        </dl>
           
         <dl>
           <dt><a href="/help/#help">help</dt>
