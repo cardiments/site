@@ -91,7 +91,7 @@ dd {
   padding: 1.2rem;
   border-radius: 1.5rem;
   background-color: whitesmoke;
-  box-shadow: 1rem 1rem 2rem -1rem;
+  box-shadow: 1rem .1rem 2rem -1rem;
   font-size: large;
 }
 
@@ -105,13 +105,7 @@ dd {
   max-width: 5rem;
 }
 
-.comingsoon {
-  max-width: 100%;
-  max-height: calc(100vh - 5rem);
-}
-
 .centered {
   margin: 0 auto;
   text-align: center;
 }
-
