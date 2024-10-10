@@ -58,7 +58,7 @@ customElements.define(
             src="/static/ArcWht.svg" 
           />
           <div>
-            <img src="/static/Box3d.png" width="25%">
+            <img src="/static/Box3d.png" width="33%">
           </div>
         </div>
       </header>
