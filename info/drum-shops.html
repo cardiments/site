@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Draw GeoJSON points</title>
+    <meta property="og:description" content="Draw points from a GeoJSON collection to a map." />
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css' />
+    <script src='https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body,
+        #map {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script>
+        const map = new maplibregl.Map({
+            container: 'map',
+            style:
+                'https://api.maptiler.com/maps/positron/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+            center: [-1, 52],
+            pitch: 40, // pitch in degrees
+            bearing: -40, // bearing in degrees
+            zoom: 5.5
+        });
+
+        let shops
+
+        map.on('load', async () => {
+            // Add an image to use as a custom marker
+            const image = await map.loadImage('https://maplibre.org/maplibre-gl-js/docs/assets/osgeo-logo.png');
+            map.addImage('custom-marker', image.data);
+            // Add a GeoJSON source with drum shops
+            map.addSource('drumshops', {
+                'type': 'geojson',
+                'data': {
+                    "type": "FeatureCollection",
+                    "features": [
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.3582519, 53.4257759]
+                            },
+                            "properties": {
+                                "name": "Rockem Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4727713, 53.3759091]
+                            },
+                            "properties": {
+                                "name": "Music Junkies"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4753081, 53.3618109]
+                            },
+                            "properties": {
+                                "name": "Rich Tone Music Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.2732078, 53.4780563]
+                            },
+                            "properties": {
+                                "name": "PMT Manchester"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.892869, 51.453963]
+                            },
+                            "properties": {
+                                "name": "Drumwright"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.8360596, 51.2842559]
+                            },
+                            "properties": {
+                                "name": "Kingfisher Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.5759068, 51.2413013]
+                            },
+                            "properties": {
+                                "name": "Andertons Music Co"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1391346, 50.8257918]
+                            },
+                            "properties": {
+                                "name": "GAK"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.5150947, 54.9080057]
+                            },
+                            "properties": {
+                                "name": "Newcastle Drum Centre"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.4411372, 51.9747523]
+                            },
+                            "properties": {
+                                "name": "Rusty Drums Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1391346, 50.8257918]
+                            },
+                            "properties": {
+                                "name": "GAK"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.5157105, 54.9071198]
+                            },
+                            "properties": {
+                                "name": "Drum Shop UK"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.084873, 51.277755]
+                            },
+                            "properties": {
+                                "name": "Hobgoblin Music Canterbury"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.9795775, 50.7399791]
+                            },
+                            "properties": {
+                                "name": "Poole Percussion"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.2880058, 52.6313294]
+                            },
+                            "properties": {
+                                "name": "Anglia Drum Centre (Norwich)"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.8931221, 50.7604945]
+                            },
+                            "properties": {
+                                "name": "Snare Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.103656, 51.3794195]
+                            },
+                            "properties": {
+                                "name": "Rock Bottom"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.6255625, 50.9421875]
+                            },
+                            "properties": {
+                                "name": "W9RF+VQ",
+                                "description": "Pete wrights drum shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.1522859, 55.8662932]
+                            },
+                            "properties": {
+                                "name": "Drummers Only"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.1883405, 50.8407783]
+                            },
+                            "properties": {
+                                "name": "Graham Russell Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.3349026, 51.2345476]
+                            },
+                            "properties": {
+                                "name": "Drumattic"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.8965301, 52.4884173]
+                            },
+                            "properties": {
+                                "name": "The Cymbal Centre"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.334873, 53.474038]
+                            },
+                            "properties": {
+                                "name": "Nicko McBrain’s Drum One"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.2372473, 53.4707665]
+                            },
+                            "properties": {
+                                "name": "Johnny Roadhouse Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.856483, 53.3519625]
+                            },
+                            "properties": {
+                                "name": "Professional Music Technology"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.8770823, 52.4771231]
+                            },
+                            "properties": {
+                                "name": "Professional Music Technology"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.1737005, 51.5867432]
+                            },
+                            "properties": {
+                                "name": "PMT Romford"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.6100968, 54.9703314]
+                            },
+                            "properties": {
+                                "name": "Professional Music Technology"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.057385, 51.5903934]
+                            },
+                            "properties": {
+                                "name": "lockwood industrial park"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.1751372, 55.9724435]
+                            },
+                            "properties": {
+                                "name": "Drum Central"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.281683, 55.874513]
+                            },
+                            "properties": {
+                                "name": "Drum Shop Glasgow"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1901399, 51.4373259]
+                            },
+                            "properties": {
+                                "name": "London Drum Company"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1537775, 51.4661073]
+                            },
+                            "properties": {
+                                "name": "Drumshack"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4741135, 52.9173613]
+                            },
+                            "properties": {
+                                "name": "Rattle & Drum Music",
+                                "description": "<p>Well stocked with sticks,heads,cymbals, hardware. Park at matalan: <a href='https://maps.app.goo.gl/oUzatK6DGFjsUJQH9'>location</a></p>"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.339846, 53.7307132]
+                            },
+                            "properties": {
+                                "name": "Rock Factory"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.9872747, 53.4090991]
+                            },
+                            "properties": {
+                                "name": "ADC Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.7746482, 56.0007672]
+                            },
+                            "properties": {
+                                "name": "dD Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.4268773, 56.3877326]
+                            },
+                            "properties": {
+                                "name": "Bertha Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.1313361, 51.5086386]
+                            },
+                            "properties": {
+                                "name": "Drumazon Limited"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.3617565, 51.5457529]
+                            },
+                            "properties": {
+                                "name": "Rubix Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.1183394, 50.3712673]
+                            },
+                            "properties": {
+                                "name": "Sound Unlimited"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.3018677, 52.51657]
+                            },
+                            "properties": {
+                                "name": "Mid Wales Music Centre"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.2248546, 51.7415719]
+                            },
+                            "properties": {
+                                "name": "PMT Oxford"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.5384876, 53.7989232]
+                            },
+                            "properties": {
+                                "name": "Hobgoblin Music Leeds"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.9394968, 54.8963282]
+                            },
+                            "properties": {
+                                "name": "Rainbow Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.1004011, 53.9887071]
+                            },
+                            "properties": {
+                                "name": "Gear4music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.340189, 53.743863]
+                            },
+                            "properties": {
+                                "name": "Gough & Davy Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4927905, 53.6716094]
+                            },
+                            "properties": {
+                                "name": "HighWood Drums & HighWood Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.591237, 51.46095]
+                            },
+                            "properties": {
+                                "name": "Mickleburgh Musical Instruments"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.1490516, 52.6285245]
+                            },
+                            "properties": {
+                                "name": "IntaSound"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.2435006, 52.569941]
+                            },
+                            "properties": {
+                                "name": "Breve Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.3953318, 52.4957004]
+                            },
+                            "properties": {
+                                "name": "East Midlands Music. Music Shop & Showroom"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.1524234, 52.0566173]
+                            },
+                            "properties": {
+                                "name": "Music World Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.1307778, 52.0599564]
+                            },
+                            "properties": {
+                                "name": "EES Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.1781277, 51.4793151]
+                            },
+                            "properties": {
+                                "name": "G.M Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.968298, 56.460467]
+                            },
+                            "properties": {
+                                "name": "Kenny's Music Dundee"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.7966663, 54.038794]
+                            },
+                            "properties": {
+                                "name": "Jalapeno Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.0996099, 57.1458134]
+                            },
+                            "properties": {
+                                "name": "Kenny's Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.2266885, 57.4786011]
+                            },
+                            "properties": {
+                                "name": "The Music Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.1630583, 52.9568314]
+                            },
+                            "properties": {
+                                "name": "The Music Inn Instruments Nottingham - Music shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.1780221, 53.0279866]
+                            },
+                            "properties": {
+                                "name": "The Rhythm House"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.3554867, 53.7209211]
+                            },
+                            "properties": {
+                                "name": "Galaxy Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.1638836, 53.4255673]
+                            },
+                            "properties": {
+                                "name": "BRITISH DRUM COMPANY"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.0188078, 52.9817829]
+                            },
+                            "properties": {
+                                "name": "Roadhouse Music Store"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.133942, 52.20523]
+                            },
+                            "properties": {
+                                "name": "PMT Cambridge"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.8977052, 52.2344724]
+                            },
+                            "properties": {
+                                "name": "PMT Northampton"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.1727657, 51.5836177]
+                            },
+                            "properties": {
+                                "name": "DV247 / Music Store professional"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.1289676, 53.260962]
+                            },
+                            "properties": {
+                                "name": "Slam Jam Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.1980783, 51.4571853]
+                            },
+                            "properties": {
+                                "name": "Drum Depot"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.5096516, 51.4584906]
+                            },
+                            "properties": {
+                                "name": "Collingwood Drums",
+                                "description": "BY APPOINTMENT ONLY<br>Dave Collingwood - cymbalsmith<br>Collingwood Cymbals<br>dave@collingwoodcymbals.com<br>www.collingwoodcymbals.com<br>https://www.patreon.com/collingwoodcymbals http://www.collingwooddrums.com/ "
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1419, 50.826428]
+                            },
+                            "properties": {
+                                "name": "Hobgoblin Music Brighton"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.602067, 51.4541587]
+                            },
+                            "properties": {
+                                "name": "Hobgoblin Music Bristol"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.3596827, 51.3781018]
+                            },
+                            "properties": {
+                                "name": "Matt Nolan - cymbal smith",
+                                "description": "* by appointment only matt@mattnolancustomcymbals.com.     https://www.mattnolancustomcymbals.com",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.2544924, 52.5926051]
+                            },
+                            "properties": {
+                                "name": "Mad About Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.9413871, 52.3984558]
+                            },
+                            "properties": {
+                                "name": "Music To You Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1331878, 53.1981171]
+                            },
+                            "properties": {
+                                "name": "Into Music - Drum Store"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.435973, 55.378051]
+                            },
+                            "properties": {
+                                "name": "World Rhythm Percussion"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.4953363, 51.7573202]
+                            },
+                            "properties": {
+                                "name": "DJM Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.1214076, 51.6074502]
+                            },
+                            "properties": {
+                                "name": "Guru Soundz Appointment only"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.3796845, 51.5042891]
+                            },
+                            "properties": {
+                                "name": "BINA Musicals"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.4922558, 52.224366]
+                            },
+                            "properties": {
+                                "name": "Knock on Wood",
+                                "description": "Unit 3 Carlton Park Industrial Estate IP17 2NL (showroom temporarily closed)<br><br>https://www.knockonwood.co.uk/<br>Telephone 01728 598 600<br>email - info@knockonwood.co.uk"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.3064852, 51.8562358]
+                            },
+                            "properties": {
+                                "name": "James Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.5054749, 52.4425065]
+                            },
+                            "properties": {
+                                "name": "BamBah Musicals"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4962622, 52.4515959]
+                            },
+                            "properties": {
+                                "name": "BamBah Musicals"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.501619, 52.3798931]
+                            },
+                            "properties": {
+                                "name": "Bevs beaters",
+                                "description": "+44 7581 205694",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.4202697, 51.8771384]
+                            },
+                            "properties": {
+                                "name": "Ac Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4986391, 53.7189025]
+                            },
+                            "properties": {
+                                "name": "Animal Custom Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.5727839, 51.4526404]
+                            },
+                            "properties": {
+                                "name": "Meridian Handpans"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.4121502, 50.9086508]
+                            },
+                            "properties": {
+                                "name": "Becketts Music Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.7891789, 51.5615073]
+                            },
+                            "properties": {
+                                "name": "Holmes Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.9004471, 51.8899296]
+                            },
+                            "properties": {
+                                "name": "Mann's Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.5282936, 50.7092989]
+                            },
+                            "properties": {
+                                "name": "Panamor Handpans Ltd",
+                                "description": "07772 295 742 Contact@PanAmorHandpans.com",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.2741025, 52.9407863]
+                            },
+                            "properties": {
+                                "name": "Primas custom drums ltd.",
+                                "description": "primascustomdrums@outlook.com<br>Eddie Hodgkinson - 07824997715 https://primascustomdrums.com"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.1340084, 51.5176693]
+                            },
+                            "properties": {
+                                "name": "Hobgoblin Music London"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.8933924, 52.4820098]
+                            },
+                            "properties": {
+                                "name": "Hobgoblin Music Birmingham"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.8760315, 52.4771917]
+                            },
+                            "properties": {
+                                "name": "PMT Birmingham"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.0974553, 51.5238915]
+                            },
+                            "properties": {
+                                "name": "PMT London"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.9872747, 53.4090991]
+                            },
+                            "properties": {
+                                "name": "Ecymbals",
+                                "description": "*Appointmemt only",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.7103036, 52.0584111]
+                            },
+                            "properties": {
+                                "name": "The Hereford Music Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.7551862, 52.7087313]
+                            },
+                            "properties": {
+                                "name": "Music Bros. Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.5640555, 53.7985452]
+                            },
+                            "properties": {
+                                "name": "PMT Leeds"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.5091727, 53.7860642]
+                            },
+                            "properties": {
+                                "name": "Druig",
+                                "description": "Drumpig.com is your first stop for good-quality, affordable, pre-loved drums & drumming accessories07752 369927/01132 498118www.drumpig.comdrumpig@drumpig.com"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.0741955, 52.1108198]
+                            },
+                            "properties": {
+                                "name": "Tom's Drum Shop",
+                                "description": "• By appointmenthttp://ww1.tomsdrumshop.comTomsDrumShopUK@gmail.com+44 7725 895904",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.3554867, 53.7209211]
+                            },
+                            "properties": {
+                                "name": "Galaxy Music",
+                                "description": "+44 1977 520101<br>https://www.facebook.com/galaxymusicshop<br>https://guvnaguitars.com/guitar-shops/galaxy-music/"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.9803738, 51.4030615]
+                            },
+                            "properties": {
+                                "name": "Dave's Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.886144, 52.241953]
+                            },
+                            "properties": {
+                                "name": "BW Drum Shop Northampton",
+                                "description": "Good specialist shop. Good amount of LP stock. Also offer lessons/exams",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.1626884, 52.0578023]
+                            },
+                            "properties": {
+                                "name": "The Drumming Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.929076, 50.754438]
+                            },
+                            "properties": {
+                                "name": "Absolute Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.1747955, 51.3176506]
+                            },
+                            "properties": {
+                                "name": "Heron Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.3904635, 50.6266097]
+                            },
+                            "properties": {
+                                "name": "The Marching Band Shop",
+                                "description": "https://www.themarchingbandshop.co.uk/",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.6424107, 54.6254737]
+                            },
+                            "properties": {
+                                "name": "Liberty Drums"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.0426951, 51.4425875]
+                            },
+                            "properties": {
+                                "name": "Soundheart Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.698611, 51.1444]
+                            },
+                            "properties": {
+                                "name": "Repercussion Drums",
+                                "description": "https://www.repercussiondrums.co.uk/<br>Stave shell builder<br>Approximate address"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.6062106, 51.4441173]
+                            },
+                            "properties": {
+                                "name": "Bristol Drum Co.",
+                                "desiption": "Bristol Drum Co. produces a range of wooden segmented snare drums<br><br>https://www.bristol-drum-co.uk/<br><br>Contact : Mike Turner<br><br>bristol-drums@virginmedia.com"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.748229, 51.628611]
+                            },
+                            "properties": {
+                                "name": "Hornys Drums",
+                                "description": "Vintage drum restorer<br>• appointment only<br>https://hornysdrums.com/<br>Telephone: +44 (0) 7708 936 764 E-mail: info@hornysdrums.com"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.1312729, 52.1950788]
+                            },
+                            "properti": {
+                                "name": "Cambridge Drums",
+                                "description": "*Address needed<br>Drum builder https://www.cambridgedrums.co.uk<br>Tel: 07795 112120 / 07836 555256<br>Email: sales@cambridgedrums.co.uk"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.0480805, 51.531103]
+                            },
+                            "properties": {
+                                "name": "East City Taimo Shop",
+                                "description": "Taiko sales and workshops<br>*address needed<br>http://www.eastcitytaiko.co.uk/<br>info@eastcitytaiko.co.uk"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.2483077, 52.9118912]
+                            },
+                            "properties": {
+                                "name": "Jobeky Drums Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.1206647, 52.92133]
+                            },
+                            "properties": {
+                                "name": "Abbey Road Music",
+                                "description": "https://abbey-road-music.com<br>(+44) 115 974 4864<br> sales@abbey-road-music.com"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.138187, 50.828181]
+                            },
+                            "properties": {
+                                "name": "Adaptatrap"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-5.0560855, 50.2629175]
+                            },
+                            "properties": {
+                                "name": "Modern Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.720658, 50.471861]
+                            },
+                            "properties": {
+                                "name": "Craigs Music Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.0642282, 51.0822687]
+                            },
+                            "properties": {
+                                "name": "Soundpad"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.4848933, 50.9031468]
+                            },
+                            "properties": {
+                                "name": "Tiverton Music Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.083871, 52.415948]
+                            },
+                            "properties": {
+                                "name": "Ystwyth Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.9206949, 53.2684887]
+                            },
+                            "properties": {
+                                "name": "Big Rock Music Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.5797957, 51.5066428]
+                            },
+                            "properties": {
+                                "name": "Bridgend Music Store"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.3758532, 54.9049511]
+                            },
+                            "properties": {
+                                "name": "Sunderland Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.3658035, 54.6630495]
+                            },
+                            "properties": {
+                                "name": "Billy Bowman Music Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.2289026, 54.1146172]
+                            },
+                            "properties": {
+                                "name": "R & T Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.7412859, 54.3130194]
+                            },
+                            "properties": {
+                                "name": "Big Chilli UK"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.0152748, 52.5183007]
+                            },
+                            "properties": {
+                                "name": "D C R Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.2893366, 52.6309321]
+                            },
+                            "properties": {
+                                "name": "Cookes Band Instruments Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [1.2934929, 52.6371484]
+                            },
+                            "properties": {
+                                "name": "PMT Norwich"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.5822102, 51.9157432]
+                            },
+                            "properties": {
+                                "name": "River Music",
+                                "description": "Very limited stock ( sticks ) * aug 2023",
+                                "styleUrl": "#icon-1529-9C27B0",
+                                "icon-scale": 1,
+                                "icon": "images/icon-1.png"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.9867375, 51.5954463]
+                            },
+                            "properties": {
+                                "name": "EV-ENTZ MUSIC"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.049531, 52.3443278]
+                            },
+                            "properties": {
+                                "name": "Knighton Music Centre"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.7169302, 52.3681707]
+                            },
+                            "properties": {
+                                "name": "Reeds Plus"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.7239437, 52.7405388]
+                            },
+                            "properties": {
+                                "name": "Salop Music Centre"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.3778155, 52.7690362]
+                            },
+                            "properties": {
+                                "name": "HeyJude’s"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-1.6235334, 54.7522163]
+                            },
+                            "properties": {
+                                "name": "Durham Music Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.1047489, 54.9730137]
+                            },
+                            "properties": {
+                                "name": "Core Music CIC"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.0034696, 55.7679379]
+                            },
+                            "properties": {
+                                "name": "The Music Shop"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-3.6094597, 55.0696847]
+                            },
+                            "properties": {
+                                "name": "John Douglas Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.8097159, 55.6168058]
+                            },
+                            "properties": {
+                                "name": "Music Station"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.6778502, 51.6401346]
+                            },
+                            "properties": {
+                                "name": "Hannah's Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.6075119, 51.7837411]
+                            },
+                            "properties": {
+                                "name": "Drums etc.",
+                                "description": "www.drums-etc.co.uk<br><br>Shop entry is by appointment only, so dp us a message on our Facebook Page, call us on 07857 306238 or email us at jamie.drums.etc@gmail.com to arrange a shop appointment<br><br>Unit 13, Stepbridge Rd (above Express Windows), Coleford, GL16 8PJ"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.3138973, 51.6767469]
+                            },
+                            "properties": {
+                                "name": "Sound Travels",
+                                "description": "World percussion with a spirituaangle. Comprehensive stock including Meinl gongs *aug 2023<br><br>Unit 1, Spring Mill Business Park, Nailsworth, Gloucestershire, GL6 0BS<br>https://www.soundtravels.co.uk<br>01453 835600"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.710219, 52.247109]
+                            },
+                            "properties": {
+                                "name": "Balaam's Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.3738625, 51.4429349]
+                            },
+                            "properties": {
+                                "name": "Elephant Music (Kent) Ltd"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.593119, 53.388436]
+                            },
+                            "properties": {
+                                "name": "A to G Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.4591872, 53.7613795]
+                            },
+                            "properties": {
+                                "name": "Reidys Home Of Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-2.2379715, 53.7841828]
+                            },
+                            "properties": {
+                                "name": "Pro Solo Music - Musical Instruments,Guitars,PA, Accessories,Tuition & Repairs"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-4.384356, 54.321708]
+                            },
+                            "properties": {
+                                "name": "Drum Base"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.608842, 50.9870516]
+                            },
+                            "properties": {
+                                "name": "Drums & Sticks"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.2949294, 50.7705766]
+                            },
+                            "properties": {
+                                "name": "Roadies"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.5763329, 50.8549687]
+                            },
+                            "properties": {
+                                "name": "B&T Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [-0.6450811, 52.9100237]
+                            },
+                            "properties": {
+                                "name": "AH Music"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.3607932, 52.5978026]
+                            },
+                            "properties": {
+                                "name": "One Stop Drums",
+                                "description": "Stocking a range of drum equient. Also trading in 2nd hand and vintage drums<br><br>https://onestopdrums.co.uk<br>scott@onestopdrums.co.uk<br><br>Unit 3, Barton’s Court,<br>Horse Fair Close,<br>Downham Market<br>PE38 0QR"
+                            }
+                        },
+                        {
+                            "type": "Feature",
+                            "geometry": {
+                                "type": "Point",
+                                "coordinates": [0.6346931, 51.5790155]
+                            },
+                            "properties": {
+                                "name": "Southern Percussion Ltd"
+                            }
+                        }
+                    ]
+                }
+            });
+
+            // Add a symbol layer
+            shops = map.addLayer({
+                'id': 'drumshops',
+                'type': 'symbol',
+                'source': 'drumshops',
+                'layout': {
+                    // 'icon-image': 'custom-marker',
+                    // get the year from the source's "year" property
+                    'text-field': ['get', 'name'
+                    ],
+                    'text-font': [
+                        'Open Sans Semibold',
+                        'Arial Unicode MS Bold'
+                    ],
+                    'text-offset': [
+                        0,
+                        1.25
+                    ],
+                    'text-anchor': 'top'
+                }
+            })
+            map.fitBounds(shops.getBounds())
+            map.setMaxBounds([
+                [
+                    -9.985492099393014,
+                    48.402653207002174
+                ],
+                [
+                    4.444955743288574,
+                    59.4655918837864
+                ]
+            ])
+
+        })
+
+        // Create a popup, but don't add it to the map yet.
+        const popup = new maplibregl.Popup({
+            closeButton: true,
+            closeOnClick: true
+        })
+
+        map.on('mouseenter', 'drumshops', (e) => {
+            // Change the cursor style as a UI indicator.
+            // map.getCanvas().style.cursor = 'pointer';
+
+            const coordinates = e.features[0].geometry.coordinates.slice();
+            const description = `<h3>${e.features[0].properties.name}</h3> ${e.features[0].properties.description}`
+
+            // Ensure that if the map is zoomed out such that multiple
+            // copies of the feature are visible, the popup appears
+            // over the copy being pointed to.
+            while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+            }
+
+            // Populate the popup and set its coordinates
+            // based on the feature found.
+            if (e.features[0].properties.description != null) {
+                popup.setLngLat(coordinates).setHTML(description).addTo(map);
+            }
+        });
+        // map.on('mouseleave', 'drumshops', () => {
+        //     map.getCanvas().style.cursor = '';
+        //     popup.remove();
+        // });
+    </script>
+</body>
+
+</html>
