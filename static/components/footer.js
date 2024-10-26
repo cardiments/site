@@ -71,7 +71,7 @@ customElements.define(
         <dl>
             <dt><a href="https://www.etsy.com/shop/cardiments">shop</a></dt>
         </dl>
-
+        <div style="flex-basis: 100%; height: 0">
         <div style="text-align:center; margin: 1rem">
           <img 
             style="animation-name: spin;
